@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SquashTheCreeps", "Game\SquashTheCreeps.csproj", "{CACBC22B-2A77-43EC-B0DD-3BDC03D952B0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2F6F7A05-CFB1-4E3C-9CF9-D68332EE32C4} = {2F6F7A05-CFB1-4E3C-9CF9-D68332EE32C4}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnotherLibrary", "AnotherLibrary\AnotherLibrary.csproj", "{2F6F7A05-CFB1-4E3C-9CF9-D68332EE32C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		ExportDebug|Any CPU = ExportDebug|Any CPU
+		ExportRelease|Any CPU = ExportRelease|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CACBC22B-2A77-43EC-B0DD-3BDC03D952B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CACBC22B-2A77-43EC-B0DD-3BDC03D952B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CACBC22B-2A77-43EC-B0DD-3BDC03D952B0}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{CACBC22B-2A77-43EC-B0DD-3BDC03D952B0}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{CACBC22B-2A77-43EC-B0DD-3BDC03D952B0}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{CACBC22B-2A77-43EC-B0DD-3BDC03D952B0}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{CACBC22B-2A77-43EC-B0DD-3BDC03D952B0}.Release|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{CACBC22B-2A77-43EC-B0DD-3BDC03D952B0}.Release|Any CPU.Build.0 = ExportRelease|Any CPU
+		{2F6F7A05-CFB1-4E3C-9CF9-D68332EE32C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F6F7A05-CFB1-4E3C-9CF9-D68332EE32C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F6F7A05-CFB1-4E3C-9CF9-D68332EE32C4}.ExportDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F6F7A05-CFB1-4E3C-9CF9-D68332EE32C4}.ExportDebug|Any CPU.Build.0 = Debug|Any CPU
+		{2F6F7A05-CFB1-4E3C-9CF9-D68332EE32C4}.ExportRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{2F6F7A05-CFB1-4E3C-9CF9-D68332EE32C4}.ExportRelease|Any CPU.Build.0 = Release|Any CPU
+		{2F6F7A05-CFB1-4E3C-9CF9-D68332EE32C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F6F7A05-CFB1-4E3C-9CF9-D68332EE32C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlsgabuw3wqap"]
+
+[ext_resource type="Script" path="res://src/Mob.cs" id="1_4nv3b"]
+[ext_resource type="PackedScene" uid="uid://brtbut0q4m5xq" path="res://art/mob.glb" id="1_g72er"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tji7n"]
+size = Vector3(1.82805, 0.334201, 2.03404)
+
+[sub_resource type="Animation" id="Animation_mege5"]
+resource_name = "float"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.7, 1.2),
+"transitions": PackedFloat32Array(0.466517, 1.8025, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.65, 0), Vector3(0, 0.35, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/Character:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.5, 1.2),
+"transitions": PackedFloat32Array(0.34151, 1.86607, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.139626, 0, 0), Vector3(-0.15708, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tuls8"]
+_data = {
+"float": SubResource("Animation_mege5")
+}
+
+[node name="Mob" type="CharacterBody3D" groups=["mobs"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_4nv3b")
+
+[node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+
+[node name="Character" parent="Pivot" instance=ExtResource("1_g72er")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.217539, 0)
+shape = SubResource("BoxShape3D_tji7n")
+
+[node name="VisibilityNotifier" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.131506, 0)
+aabb = AABB(-1.2345, -0.185032, -1.29176, 2.41627, 1.25385, 3.27688)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "float"
+libraries = {
+"": SubResource("AnimationLibrary_tuls8")
+}
+
+[connection signal="screen_exited" from="VisibilityNotifier" to="." method="OnVisibilityNotifierScreenExited"]
